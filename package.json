@@ -1,0 +1,52 @@
+{
+  "name": "nextjs-baseweb",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "lint": "eslint 'pages/**/*.{js,ts,tsx}'",
+    "start": "next start",
+    "test": "jest",
+    "tsc": "tsc --noEmit"
+  },
+  "jest": {
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "tsconfig.jest.json"
+      }
+    },
+    "transform": {
+      ".(ts|tsx)": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ]
+  },
+  "dependencies": {
+    "@types/jest": "^24.0.23",
+    "@types/node": "^12.12.18",
+    "@types/react": "^16.9.16",
+    "@types/styletron-engine-atomic": "^1.1.0",
+    "@types/styletron-react": "^5.0.2",
+    "@typescript-eslint/eslint-plugin": "^2.12.0",
+    "@typescript-eslint/parser": "^2.12.0",
+    "baseui": "^9.30.0",
+    "eslint": "^6.7.2",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.17.0",
+    "jest": "^24.9.0",
+    "next": "^9.1.5",
+    "prettier": "^1.19.1",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
+    "styletron-engine-atomic": "^1.1.2",
+    "styletron-react": "^5.0.1",
+    "ts-jest": "^24.2.0",
+    "typescript": "^3.7.3"
+  }
+}
