@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Document, {Head, Main, NextScript} from 'next/document';
+import Document, {Head, Html, Main, NextScript} from 'next/document';
 import {Provider as StyletronProvider} from 'styletron-react';
 import {Server, Sheet} from 'styletron-engine-atomic';
 import {styletron} from '../styletron';
@@ -17,7 +17,7 @@ class MyDocument extends Document<{stylesheets: Sheet[]}> {
 
   render() {
     return (
-      <html>
+      <Html>
         <Head>
           {this.props.stylesheets.map((sheet, i) => (
             <style
@@ -33,7 +33,7 @@ class MyDocument extends Document<{stylesheets: Sheet[]}> {
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     );
   }
 }
