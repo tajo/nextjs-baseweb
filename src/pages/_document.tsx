@@ -6,6 +6,7 @@ import {styletron} from '../styletron';
 
 class MyDocument extends Document<{stylesheets: Sheet[]}> {
   static getInitialProps(props: any) {
+    // eslint-disable-next-line react/display-name
     const page = props.renderPage((App: any) => (props: any) => (
       <StyletronProvider value={styletron}>
         <App {...props} />
