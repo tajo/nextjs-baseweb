@@ -1,14 +1,15 @@
-import { Server, Sheet } from 'styletron-engine-atomic';
-import { styletron } from '../styletron';
-import Document, { DocumentContext, Head, Html, Main, NextScript } from 'next/document';
-import { Provider as StyletronProvider } from 'styletron-react';
+// @ts-ignore
+import {Server, Sheet} from 'styletron-engine-atomic';
+import {styletron} from '../styletron';
+import {DocumentContext, Head, Html, Main, NextScript} from 'next/document';
+import {Provider as StyletronProvider} from 'styletron-react';
 import React from 'react';
 
 type Props = {
   stylesheets: Sheet[];
 };
 
-const MyDocument = ({ stylesheets }: Props) => {
+const MyDocument = ({stylesheets}: Props) => {
   return (
     <Html>
       <Head>
@@ -16,7 +17,7 @@ const MyDocument = ({ stylesheets }: Props) => {
           <style
             key={i}
             className="_styletron_hydrate_"
-            dangerouslySetInnerHTML={{ __html: sheet.css }}
+            dangerouslySetInnerHTML={{__html: sheet.css}}
             media={sheet.attrs.media}
             data-hydrate={sheet.attrs['data-hydrate']}
           />
@@ -32,14 +33,16 @@ const MyDocument = ({ stylesheets }: Props) => {
 
 MyDocument.getInitialProps = async (ctx: DocumentContext) => {
   const page = await ctx.renderPage({
-    enhanceApp: (App: any) => (props: any) => (
-      <StyletronProvider value={styletron}>
-        <App {...props} />
-      </StyletronProvider>
-    ),
+    // eslint-disable-next-line react/display-name
+    enhanceApp: (App: any) => (props: any) =>
+      (
+        <StyletronProvider value={styletron}>
+          <App {...props} />
+        </StyletronProvider>
+      ),
   });
   const stylesheets = (styletron as Server).getStylesheets() || [];
-  return { ...page, stylesheets };
+  return {...page, stylesheets};
 };
 
 export default MyDocument;
