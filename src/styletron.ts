@@ -1,4 +1,4 @@
-import {Client, Server} from 'styletron-engine-atomic';
+import {Client, Server} from 'styletron-engine-monolithic';
 
 const getHydrateClass = () =>
   document.getElementsByClassName(
