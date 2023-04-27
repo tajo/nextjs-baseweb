@@ -5,7 +5,7 @@ This is an opinionated scaffold of Next.js and Base Web. It comes with:
 - Nextjs
 - Base Web
 - Styletron
-- Jest
+- Vitest
 - Eslint
 - Prettier
 - TypeScript
